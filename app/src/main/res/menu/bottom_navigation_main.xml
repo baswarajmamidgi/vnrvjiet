@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/offlinedocs"
+        android:title="Saved files"
+        android:enabled="true"
+        android:icon="@drawable/downloaded"/>
+    <item
+        android:id="@+id/onlinedocs"
+        android:title="Cloud"
+        android:enabled="true"
+        android:icon="@drawable/ic_cloud_download"/>
+
+</menu>
