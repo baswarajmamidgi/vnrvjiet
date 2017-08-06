@@ -85,7 +85,6 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
 
                         Glide.with(Timetable.this).load(dataSnapshot.getValue(String.class))
                                 .placeholder(R.drawable.loading)
-                                .error(R.drawable.noimage)
                                 .into(photoView);
 
 

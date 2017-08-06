@@ -1,5 +1,6 @@
 package com.baswarajmamidgi.vnrvjiet;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -118,14 +119,17 @@ public class Login extends AppCompatActivity {
         }
 
 
-
-
+        final ProgressDialog progressDialog=new ProgressDialog(Login.this);
+        progressDialog.setTitle("Authenticating...");
+        progressDialog.setMessage("Please wait");
+        progressDialog.show();
 
         mAuth.signInWithEmailAndPassword(name,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
+                    progressDialog.dismiss();
                     Toast.makeText(Login.this, "Login success", Toast.LENGTH_SHORT).show();
                     Intent i=new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(i);
@@ -133,6 +137,7 @@ public class Login extends AppCompatActivity {
                 }
                 else
                 {
+                    progressDialog.dismiss();
 
                     Toast.makeText(Login.this, "Login failed", Toast.LENGTH_SHORT).show();
                 }

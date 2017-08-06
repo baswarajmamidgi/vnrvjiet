@@ -79,5 +79,9 @@ public class Loginactivity extends AppCompatActivity {
         mAuth.addAuthStateListener(mAuthListener);
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
+    }
 }

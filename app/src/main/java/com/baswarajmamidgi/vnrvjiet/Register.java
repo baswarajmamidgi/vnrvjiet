@@ -23,7 +23,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private EditText username;
     private EditText email;
     private EditText password;
@@ -37,12 +36,12 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
-        username= (EditText) findViewById(R.id.username);
-        password= (EditText) findViewById(R.id.password);
-        email= (EditText) findViewById(R.id.mail);
-        signin= (TextView) findViewById(R.id.signin);
-        back= (ImageView) findViewById(R.id.back);
-        progressDialog=new ProgressDialog(Register.this);
+        username = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.password);
+        email = (EditText) findViewById(R.id.mail);
+        signin = (TextView) findViewById(R.id.signin);
+        back = (ImageView) findViewById(R.id.back);
+        progressDialog = new ProgressDialog(Register.this);
         progressDialog.setMessage("Registering...");
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,45 +90,60 @@ public class Register extends AppCompatActivity {
                             progressDialog.dismiss();
                             emailVerification();
 
-                            //Log.d("log", "createUserWithEmail:onComplete:" + "confirmation link sent to mail");
 
 
-                            // If sign in fails, display a message to the user. If sign in succeeds
-                            // the auth state listener will be notified and logic to handle the
-                            // signed in user can be handled in the listener.
                         }
                         if (!task.isSuccessful()) {
                             progressDialog.dismiss();
                             Toast.makeText(Register.this, "Registration Failed",
                                     Toast.LENGTH_SHORT).show();
+                            return;
                         }
+
+
 
 
                     }
                 });
     }
 
-    private void emailVerification(){
+    private void emailVerification() {
 
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         user.sendEmailVerification()
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(Register.this,
-                                        "Verification email sent to " + user.getEmail(),
-                                        Toast.LENGTH_SHORT).show();
-                            } else {
-                                Log.e("log", "sendEmailVerification", task.getException());
-                                Toast.makeText(Register.this,
-                                        "Failed to send verification email.",
-                                        Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-        }
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(Register.this,
+                                    "Verification email sent to " + user.getEmail(),
+                                    Toast.LENGTH_SHORT).show();
 
+
+                        } else {
+                            Log.e("log", "sendEmailVerification", task.getException());
+                            Toast.makeText(Register.this,
+                                    "Failed to send verification email.",
+                                    Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                    }
+                });
+        mAuth.signOut();
+        startActivity(new Intent(Register.this, Loginactivity.class));
+
+
+        return;
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(Register.this, Loginactivity.class));
+
+
+    }
 }

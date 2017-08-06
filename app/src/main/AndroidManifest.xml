@@ -69,14 +69,10 @@
         <activity android:name=".Timetable" />
         <activity android:name=".Syllabus" />
         <activity android:name=".Documents" />
-
-
-        <activity android:name=".Loginactivity"/>
-
-        <activity android:name=".Login"/>
-
-        <activity android:name=".Register"/>
-
+        <activity android:name=".Loginactivity" />
+        <activity android:name=".Login" />
+        <activity android:name=".Register" />
+        <activity android:name=".Webpage"></activity>
     </application>
 
 </manifest>
