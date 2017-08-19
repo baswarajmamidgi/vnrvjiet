@@ -15,20 +15,18 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClubsandStudentchapters extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class StudentChapters extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private List<Carddetails> list;
     private Cardadapter adapter;
-    private String activity;
+    private String activity="chapters";
 
 
     @Override
@@ -37,24 +35,17 @@ public class ClubsandStudentchapters extends AppCompatActivity implements Naviga
         setContentView(R.layout.layout_clubsandstudentchapters);
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        toolbar.setTitle("Student Chapters");
+
         setSupportActionBar(toolbar);
 
-
-        activity=getIntent().getStringExtra("activity");
-        getSupportActionBar().setTitle(activity);
 
         list=new ArrayList<>();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         adapter=new Cardadapter(this,list);
         RecyclerView.LayoutManager layoutManager=new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new ClubsandStudentchapters.GridSpacingItemDecoration(2, dpToPx(10), true));
+        recyclerView.addItemDecoration(new StudentChapters.GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
         prepareCategories();
@@ -71,38 +62,7 @@ public class ClubsandStudentchapters extends AppCompatActivity implements Naviga
 
     }
     private void prepareCategories() {
-        if(activity.equals("clubs")) {
-            int[] images = new int[]{R.drawable.arts, R.drawable.cres, R.drawable.drama, R.drawable.edcell, R.drawable.live,R.drawable.nss, R.drawable.scintilate, R.drawable.stento,R.drawable.robotics, R.drawable.teatro, R.drawable.vjsv, R.drawable.vnrsf,R.drawable.teamrandd};
 
-            Carddetails a = new Carddetails("Creative arts", images[0]);
-            list.add(a);
-            a = new Carddetails("Crescendo", images[1]);
-            list.add(a);
-            a = new Carddetails("Dramatrix", images[2]);
-            list.add(a);
-            a = new Carddetails("ED cell", images[3]);
-            list.add(a);
-            a = new Carddetails("Live wire", images[4]);
-            list.add(a);
-            a = new Carddetails("NSS", images[5]);
-            list.add(a);
-            a = new Carddetails("Scintillate", images[6]);
-            list.add(a);
-            a = new Carddetails("Stentorian", images[7]);
-            list.add(a);
-            a = new Carddetails("Team R & D", images[12]);
-            list.add(a);
-            a = new Carddetails("Team Robotics", images[8]);
-            list.add(a);
-            a = new Carddetails("VJ Teatro", images[9]);
-            list.add(a);
-            a = new Carddetails("VJSV", images[10]);
-            list.add(a);
-            a = new Carddetails("VNR SF", images[11]);
-            list.add(a);
-        }
-        else
-        {
             int[] images = new int[]{R.drawable.asme,R.drawable.csi, R.drawable.ieee, R.drawable.iei, R.drawable.iste,R.drawable.tedx,R.drawable.isoi};
 
             Carddetails a = new Carddetails("ASME", images[0]);
@@ -121,7 +81,7 @@ public class ClubsandStudentchapters extends AppCompatActivity implements Naviga
             list.add(a);
 
 
-        }
+
 
 
         adapter.notifyDataSetChanged();
@@ -178,7 +138,7 @@ public class ClubsandStudentchapters extends AppCompatActivity implements Naviga
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(ClubsandStudentchapters.this, feedback.class));
+            startActivity(new Intent(StudentChapters.this, feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -189,45 +149,43 @@ public class ClubsandStudentchapters extends AppCompatActivity implements Naviga
 
         switch (id) {
             case R.id.home:{
-                Intent i = new Intent(ClubsandStudentchapters.this, MainActivity.class);
+                Intent i = new Intent(StudentChapters.this, MainActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(i);
                 finishAffinity();
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(ClubsandStudentchapters.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", R.string.CLUBS);
+                Intent i = new Intent(StudentChapters.this, clubs.class);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(ClubsandStudentchapters.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", R.string.CHAPTERS);
+                Intent i = new Intent(StudentChapters.this, StudentChapters.class);
                 startActivity(i);
                 break;
             }
 
             case R.id.contacts: {
-                Intent i = new Intent(ClubsandStudentchapters.this, MiscContacts.class);
+                Intent i = new Intent(StudentChapters.this, MiscContacts.class);
                 startActivity(i);
                 break;
             }
 
             case R.id.syallabus: {
 
-                startActivity(new Intent(ClubsandStudentchapters.this,Syllabus.class));
+                startActivity(new Intent(StudentChapters.this,Syllabus.class));
                 break;
 
             }
             case R.id.timetable: {
 
 
-                startActivity(new Intent(ClubsandStudentchapters.this,Timetable.class));
+                startActivity(new Intent(StudentChapters.this,Timetable.class));
                 break;
             }
             case R.id.profile: {
-                startActivity(new Intent(ClubsandStudentchapters.this, Studentinfo.class));
+                startActivity(new Intent(StudentChapters.this, Studentinfo.class));
                 break;
             }
 
@@ -236,7 +194,7 @@ public class ClubsandStudentchapters extends AppCompatActivity implements Naviga
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(ClubsandStudentchapters.this, CollegeMap.class));
+                        startActivity(new Intent(StudentChapters.this, CollegeMap.class));
 
                     }
                 });
@@ -256,7 +214,7 @@ public class ClubsandStudentchapters extends AppCompatActivity implements Naviga
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (ClubsandStudentchapters.this,feedback.class);
+                Intent intent = new Intent (StudentChapters.this,feedback.class);
                 startActivity(intent);
                 break;
             }

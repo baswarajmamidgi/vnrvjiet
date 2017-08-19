@@ -1,8 +1,6 @@
 package com.baswarajmamidgi.vnrvjiet;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,10 +15,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -108,13 +102,13 @@ public class MiscContacts extends AppCompatActivity implements NavigationView.On
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(MiscContacts.this, ClubsandStudentchapters.class);
+                Intent i = new Intent(MiscContacts.this, clubs.class);
                 i.putExtra("activity", R.string.CLUBS);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(MiscContacts.this, ClubsandStudentchapters.class);
+                Intent i = new Intent(MiscContacts.this, clubs.class);
                 i.putExtra("activity", R.string.CHAPTERS);
                 startActivity(i);
                 break;

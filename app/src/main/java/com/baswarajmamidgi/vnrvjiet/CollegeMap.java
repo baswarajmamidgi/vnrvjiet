@@ -168,15 +168,14 @@ public class CollegeMap extends FragmentActivity implements OnMapReadyCallback ,
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
+
             case R.id.clubs: {
-                Intent i = new Intent(CollegeMap.this, ClubsandStudentchapters.class);
-                i.putExtra("activity",R.string.CLUBS);
+                Intent i = new Intent(CollegeMap.this, clubs.class);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(CollegeMap.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", R.string.CHAPTERS);
+                Intent i = new Intent(CollegeMap.this, StudentChapters.class);
                 startActivity(i);
                 break;
             }

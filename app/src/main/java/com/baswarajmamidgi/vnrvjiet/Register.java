@@ -21,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.regex.Pattern;
+
 public class Register extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText username;
@@ -59,6 +61,9 @@ public class Register extends AppCompatActivity {
     }
 
     public void createuser() {
+        String coDomain = "vnrvjiet.in";
+        String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + Pattern.quote(coDomain) + "$";
+
 
         final String name = username.getText().toString();
         String pass = password.getText().toString();
@@ -81,7 +86,11 @@ public class Register extends AppCompatActivity {
             Toast.makeText(this, "enter Email", Toast.LENGTH_SHORT).show();
             return;
         }
-        progressDialog.show();
+        if(!Pattern.matches(EMAIL_PATTERN,mail)) {
+            Toast.makeText(this, "Enter valid email id eg:test@vnrvjiet.in", Toast.LENGTH_SHORT).show();
+            return;
+        }
+            progressDialog.show();
         mAuth.createUserWithEmailAndPassword(mail, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

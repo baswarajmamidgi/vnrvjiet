@@ -156,14 +156,12 @@ public class Workshopslist extends AppCompatActivity  implements NavigationView.
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Workshopslist.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", R.string.CLUBS);
+                Intent i = new Intent(Workshopslist.this, clubs.class);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(Workshopslist.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", R.string.CHAPTERS);
+                Intent i = new Intent(Workshopslist.this, StudentChapters.class);
                 startActivity(i);
                 break;
             }

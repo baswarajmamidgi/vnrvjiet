@@ -71,7 +71,7 @@
                     android:drawableLeft="@drawable/user"
                     android:drawablePadding="35dp"
                     android:hint="Username"
-                    android:inputType="text"
+                    android:inputType="text|textEmailAddress"
                     android:maxLength="30"
 
                     android:padding="10dp"

@@ -14,12 +14,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
-import java.util.Map;
 
 public class Documents extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private ViewPager viewPager;
@@ -125,14 +119,12 @@ public class Documents extends AppCompatActivity implements NavigationView.OnNav
             }
 
             case R.id.clubs: {
-                Intent i = new Intent(Documents.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", "clubs");
+                Intent i = new Intent(Documents.this, clubs.class);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(Documents.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", "chapters");
+                Intent i = new Intent(Documents.this, StudentChapters.class);
                 startActivity(i);
                 break;
             }

@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Library" />
-        <activity android:name=".ClubsandStudentchapters" />
+        <activity android:name=".clubs" />
         <activity android:name=".Faculty" />
 
         <service android:name=".MyFirebaseMessagingService">
@@ -56,6 +56,7 @@
         <activity android:name=".CollegeMap" />
         <activity android:name=".MiscContacts" />
         <activity android:name=".feedback" />
+        <activity android:name=".StudentChapters"/>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">

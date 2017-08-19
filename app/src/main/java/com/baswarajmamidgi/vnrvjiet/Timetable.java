@@ -128,13 +128,13 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Timetable.this, ClubsandStudentchapters.class);
+                Intent i = new Intent(Timetable.this, clubs.class);
                 i.putExtra("activity", R.string.CLUBS);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(Timetable.this, ClubsandStudentchapters.class);
+                Intent i = new Intent(Timetable.this, clubs.class);
                 i.putExtra("activity", R.string.CHAPTERS);
                 startActivity(i);
                 break;

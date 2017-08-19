@@ -240,14 +240,12 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Faculty.this, ClubsandStudentchapters.class);
-                i.putExtra("activity",R.string.CLUBS);
+                Intent i = new Intent(Faculty.this, clubs.class);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(Faculty.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", R.string.CHAPTERS);
+                Intent i = new Intent(Faculty.this, StudentChapters.class);
                 startActivity(i);
                 break;
             }

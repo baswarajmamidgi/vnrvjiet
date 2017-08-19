@@ -170,14 +170,12 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Gallery.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", getString(R.string.CLUBS));
+                Intent i = new Intent(Gallery.this, clubs.class);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(Gallery.this, ClubsandStudentchapters.class);
-                i.putExtra("activity", getString(R.string.CHAPTERS));
+                Intent i = new Intent(Gallery.this, StudentChapters.class);
                 startActivity(i);
                 break;
             }
@@ -216,7 +214,8 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             }
             case R.id.website: {
-                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_WEBSITE)));
+                Intent i=new Intent(Gallery.this,Webpage.class);
+                i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
                 startActivity(i);
                 break;
 

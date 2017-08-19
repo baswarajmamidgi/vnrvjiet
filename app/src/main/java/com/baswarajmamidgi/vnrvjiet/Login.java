@@ -22,6 +22,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.regex.Pattern;
+
 public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText username;
@@ -98,6 +100,9 @@ public class Login extends AppCompatActivity {
 
     public void loginuser()
     {
+        String coDomain = "vnrvjiet.in";
+        String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + Pattern.quote(coDomain) + "$";
+
 
         final String name=username.getText().toString();
         String pass=password.getText().toString();
@@ -115,6 +120,11 @@ public class Login extends AppCompatActivity {
         if(password.length()<6)
         {
             Toast.makeText(this, "Password length should be atlest 6 chars", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(!Pattern.matches(EMAIL_PATTERN,name)){
+            Toast.makeText(this, "Enter valid email id eg:test@vnrvjiet.in", Toast.LENGTH_SHORT).show();
             return;
         }
 
