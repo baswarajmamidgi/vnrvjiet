@@ -215,11 +215,10 @@ public class CollegeMap extends FragmentActivity implements OnMapReadyCallback ,
                 break;
             }
             case R.id.website: {
-                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_WEBSITE)));
+                Intent i=new Intent(CollegeMap.this,Webpage.class);
+                i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
                 startActivity(i);
                 break;
-
-
             }
             case R.id.youtube:{
                 Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_YOUTUBE)));

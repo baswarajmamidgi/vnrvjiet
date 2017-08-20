@@ -201,11 +201,10 @@ public class StudentChapters extends AppCompatActivity implements NavigationView
                 break;
             }
             case R.id.website: {
-                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_WEBSITE)));
+                Intent i=new Intent(StudentChapters.this,Webpage.class);
+                i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
                 startActivity(i);
                 break;
-
-
             }
             case R.id.youtube:{
                 Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_YOUTUBE)));

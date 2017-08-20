@@ -163,11 +163,10 @@ public class MiscContacts extends AppCompatActivity implements NavigationView.On
                 break;
             }
             case R.id.website: {
-                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_WEBSITE)));
+                Intent i=new Intent(MiscContacts.this,Webpage.class);
+                i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
                 startActivity(i);
                 break;
-
-
             }
             case R.id.youtube:{
                 Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_WEBSITE)));

@@ -284,11 +284,10 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             }
             case R.id.website: {
-                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_WEBSITE)));
+                Intent i=new Intent(Faculty.this,Webpage.class);
+                i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
                 startActivity(i);
                 break;
-
-
             }
             case R.id.youtube:{
                 Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_YOUTUBE)));
