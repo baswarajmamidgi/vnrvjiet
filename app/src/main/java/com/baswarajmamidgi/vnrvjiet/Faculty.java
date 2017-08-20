@@ -240,7 +240,7 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Faculty.this, clubs.class);
+                Intent i = new Intent(Faculty.this, Clubs.class);
                 startActivity(i);
                 break;
             }

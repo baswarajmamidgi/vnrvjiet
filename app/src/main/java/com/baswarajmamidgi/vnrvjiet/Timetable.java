@@ -128,13 +128,13 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Timetable.this, clubs.class);
+                Intent i = new Intent(Timetable.this, Clubs.class);
                 i.putExtra("activity", R.string.CLUBS);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(Timetable.this, clubs.class);
+                Intent i = new Intent(Timetable.this, Clubs.class);
                 i.putExtra("activity", R.string.CHAPTERS);
                 startActivity(i);
                 break;
@@ -163,11 +163,10 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
                 break;
             }
             case R.id.website: {
-                Intent i=new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.VNR_WEBSITE)));
+                Intent i=new Intent(Timetable.this,Webpage.class);
+                i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
                 startActivity(i);
                 break;
-
-
             }
             case R.id.youtube:{
                 Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_YOUTUBE)));

@@ -114,7 +114,7 @@ public class Library extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Library.this, clubs.class);
+                Intent i = new Intent(Library.this, Clubs.class);
                 startActivity(i);
                 break;
             }

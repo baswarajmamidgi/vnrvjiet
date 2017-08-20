@@ -156,7 +156,7 @@ public class StudentChapters extends AppCompatActivity implements NavigationView
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(StudentChapters.this, clubs.class);
+                Intent i = new Intent(StudentChapters.this, Clubs.class);
                 startActivity(i);
                 break;
             }

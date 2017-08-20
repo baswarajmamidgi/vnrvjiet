@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Library" />
-        <activity android:name=".clubs" />
+        <activity android:name=".Clubs" />
         <activity android:name=".Faculty" />
 
         <service android:name=".MyFirebaseMessagingService">

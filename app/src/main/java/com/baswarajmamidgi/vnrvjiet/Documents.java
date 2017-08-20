@@ -119,7 +119,7 @@ public class Documents extends AppCompatActivity implements NavigationView.OnNav
             }
 
             case R.id.clubs: {
-                Intent i = new Intent(Documents.this, clubs.class);
+                Intent i = new Intent(Documents.this, Clubs.class);
                 startActivity(i);
                 break;
             }

@@ -23,7 +23,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class clubs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Clubs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private List<Carddetails> list;
     private Cardadapter adapter;
     private String activity="clubs";
@@ -44,7 +44,7 @@ public class clubs extends AppCompatActivity implements NavigationView.OnNavigat
         adapter=new Cardadapter(this,list);
         RecyclerView.LayoutManager layoutManager=new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new clubs.GridSpacingItemDecoration(2, dpToPx(10), true));
+        recyclerView.addItemDecoration(new Clubs.GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
         prepareCategories();
@@ -168,7 +168,7 @@ public class clubs extends AppCompatActivity implements NavigationView.OnNavigat
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(clubs.this, feedback.class));
+            startActivity(new Intent(Clubs.this, feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -179,43 +179,43 @@ public class clubs extends AppCompatActivity implements NavigationView.OnNavigat
 
         switch (id) {
             case R.id.home:{
-                Intent i = new Intent(clubs.this, MainActivity.class);
+                Intent i = new Intent(Clubs.this, MainActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(i);
                 finishAffinity();
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(clubs.this, clubs.class);
+                Intent i = new Intent(Clubs.this, Clubs.class);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(clubs.this, StudentChapters.class);
+                Intent i = new Intent(Clubs.this, StudentChapters.class);
                 startActivity(i);
                 break;
             }
 
             case R.id.contacts: {
-                Intent i = new Intent(clubs.this, MiscContacts.class);
+                Intent i = new Intent(Clubs.this, MiscContacts.class);
                 startActivity(i);
                 break;
             }
 
             case R.id.syallabus: {
 
-                startActivity(new Intent(clubs.this,Syllabus.class));
+                startActivity(new Intent(Clubs.this,Syllabus.class));
                 break;
 
             }
             case R.id.timetable: {
 
 
-                startActivity(new Intent(clubs.this,Timetable.class));
+                startActivity(new Intent(Clubs.this,Timetable.class));
                 break;
             }
             case R.id.profile: {
-                startActivity(new Intent(clubs.this, Studentinfo.class));
+                startActivity(new Intent(Clubs.this, Studentinfo.class));
                 break;
             }
 
@@ -224,18 +224,17 @@ public class clubs extends AppCompatActivity implements NavigationView.OnNavigat
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(clubs.this, CollegeMap.class));
+                        startActivity(new Intent(Clubs.this, CollegeMap.class));
 
                     }
                 });
                 break;
             }
             case R.id.website: {
-                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_WEBSITE)));
+                Intent i=new Intent(Clubs.this,Webpage.class);
+                i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
                 startActivity(i);
                 break;
-
-
             }
             case R.id.youtube:{
                 Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_YOUTUBE)));
@@ -244,7 +243,7 @@ public class clubs extends AppCompatActivity implements NavigationView.OnNavigat
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (clubs.this,feedback.class);
+                Intent intent = new Intent (Clubs.this,feedback.class);
                 startActivity(intent);
                 break;
             }

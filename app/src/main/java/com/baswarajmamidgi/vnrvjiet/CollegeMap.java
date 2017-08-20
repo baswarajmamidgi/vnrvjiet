@@ -170,7 +170,7 @@ public class CollegeMap extends FragmentActivity implements OnMapReadyCallback ,
         switch (id) {
 
             case R.id.clubs: {
-                Intent i = new Intent(CollegeMap.this, clubs.class);
+                Intent i = new Intent(CollegeMap.this, Clubs.class);
                 startActivity(i);
                 break;
             }

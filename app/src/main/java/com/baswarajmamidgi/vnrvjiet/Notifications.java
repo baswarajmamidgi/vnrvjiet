@@ -170,7 +170,7 @@ public class Notifications extends AppCompatActivity implements NavigationView.O
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Notifications.this, clubs.class);
+                Intent i = new Intent(Notifications.this, Clubs.class);
                 startActivity(i);
                 break;
             }

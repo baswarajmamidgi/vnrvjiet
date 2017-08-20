@@ -194,13 +194,13 @@ public class Studentinfo extends AppCompatActivity implements NavigationView.OnN
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Studentinfo.this, clubs.class);
+                Intent i = new Intent(Studentinfo.this, Clubs.class);
                 i.putExtra("activity", "clubs");
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(Studentinfo.this, clubs.class);
+                Intent i = new Intent(Studentinfo.this, Clubs.class);
                 i.putExtra("activity", "chapters");
                 startActivity(i);
                 break;

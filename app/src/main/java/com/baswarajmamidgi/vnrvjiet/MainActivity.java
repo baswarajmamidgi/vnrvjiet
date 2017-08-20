@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity
         switch (id) {
 
             case R.id.clubs: {
-                Intent i = new Intent(MainActivity.this, clubs.class);
+                Intent i = new Intent(MainActivity.this, Clubs.class);
                 startActivity(i);
                 break;
             }

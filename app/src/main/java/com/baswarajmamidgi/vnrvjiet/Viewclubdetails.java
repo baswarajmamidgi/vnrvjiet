@@ -115,13 +115,13 @@ public class Viewclubdetails extends AppCompatActivity implements NavigationView
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Viewclubdetails.this, clubs.class);
+                Intent i = new Intent(Viewclubdetails.this, Clubs.class);
                 i.putExtra("activity", R.string.CLUBS);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(Viewclubdetails.this, clubs.class);
+                Intent i = new Intent(Viewclubdetails.this, Clubs.class);
                 i.putExtra("activity", R.string.CHAPTERS);
                 startActivity(i);
                 break;

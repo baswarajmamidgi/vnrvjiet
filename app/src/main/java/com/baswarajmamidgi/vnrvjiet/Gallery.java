@@ -170,7 +170,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Gallery.this, clubs.class);
+                Intent i = new Intent(Gallery.this, Clubs.class);
                 startActivity(i);
                 break;
             }

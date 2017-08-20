@@ -285,7 +285,7 @@ public class Cardadapter extends RecyclerView.Adapter<Cardadapter.MyViewHolder> 
                             bundle.putInt("image",R.drawable.teatro);
                             bundle.putString("fblink","https://www.facebook.com/vjteatro/?fref=ts");
                             bundle.putString("youtube","https://www.youtube.com/user/shootitloveit");
-                            bundle.putString("clubinfo","VJ TEATRO is the official short film club of VNR VJIET . One of the best short films clubs in the South India and it is well known for its short films like Devuda, Swachh VNR, The First Meet, A Phone Call, and How i met myself, among others.\n \n"+" In 2015-16 academic year almost 250 students have reported for the auditions. In simpler words it is the pride of VNR VJIET to have a club like that running with the tag line \"SHOOT IT. LOVE IT\" ");
+                            bundle.putString("clubinfo","VJ TEATRO is the official short film club of VNR VJIET . One of the best short films Clubs in the South India and it is well known for its short films like Devuda, Swachh VNR, The First Meet, A Phone Call, and How i met myself, among others.\n \n"+" In 2015-16 academic year almost 250 students have reported for the auditions. In simpler words it is the pride of VNR VJIET to have a club like that running with the tag line \"SHOOT IT. LOVE IT\" ");
                             i.putExtras(bundle);
                             context.startActivity(i);
                             break;
@@ -314,7 +314,7 @@ public class Cardadapter extends RecyclerView.Adapter<Cardadapter.MyViewHolder> 
                             bundle.putString("fblink","https://www.facebook.com/VNRStudentForce/");
                             bundle.putString("youtube",null);
                             bundle.putString("clubinfo"," VNR STUDENT FORCE - fight for the change \n"+
-                                    "is  one of the responsive and vibrant social clubs of our college- VNRVJIET.\n Since its inception in the year 2012 it has undergone through a wide range of transformation. It believes in the transformation of an individual which ultimately leads to the transformation of the nation.\n \n VNRSF tries to educate, enlighten and empower the society with it's thoughts and actions. VNRSF works on  4 domains like education, cognizance, environment and charity.\n \n Though it's actions represent a drop of an ocean... it believes that,if the drop were not there, the ocean would be missing something.");
+                                    "is  one of the responsive and vibrant social Clubs of our college- VNRVJIET.\n Since its inception in the year 2012 it has undergone through a wide range of transformation. It believes in the transformation of an individual which ultimately leads to the transformation of the nation.\n \n VNRSF tries to educate, enlighten and empower the society with it's thoughts and actions. VNRSF works on  4 domains like education, cognizance, environment and charity.\n \n Though it's actions represent a drop of an ocean... it believes that,if the drop were not there, the ocean would be missing something.");
                             i.putExtras(bundle);
                             context.startActivity(i);
                             break;

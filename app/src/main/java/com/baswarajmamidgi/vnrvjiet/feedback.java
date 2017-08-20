@@ -86,7 +86,7 @@ public class feedback extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(i);
                 break;
             } case R.id.clubs: {
-                Intent i = new Intent(feedback.this, clubs.class);
+                Intent i = new Intent(feedback.this, Clubs.class);
                 startActivity(i);
                 break;
             }
