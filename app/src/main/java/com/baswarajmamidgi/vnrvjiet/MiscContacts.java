@@ -68,12 +68,28 @@ public class MiscContacts extends AppCompatActivity implements NavigationView.On
     }
     private void prepareCategories() {
 
-            Carddetails a = new Carddetails("Girls Hostel", "DR L. PADMA SREE","Girls Hostel Incharge","9989478011","padmasree_l@vnrvjiet.in");
-            list.add(a);
-            a = new Carddetails("Boys Hostel", " Boppana.Narendra Kumar ","Boys Hostel Incharge","9989478011","narendrakumar_b@vnrvjiet.in");
-            list.add(a);
+        Carddetails a = new Carddetails("Principal Office", "VNR VJIET","","04023042758","postbox@vnrvjiet.ac.in");
+        list.add(a);
 
-        }
+
+         a = new Carddetails("Girls Hostel", "DR L. PADMA SREE","Girls Hostel Incharge","","padmasree_l@vnrvjiet.in");
+        list.add(a);
+        a = new Carddetails("Boys Hostel", " Boppana.Narendra Kumar ","Boys Hostel Incharge","","narendrakumar_b@vnrvjiet.in");
+        list.add(a);
+
+
+        a = new Carddetails("EXAMINATION SECTION", " Dr. K.Ramujee ","Dean(Controller of Examinations)"," ","controllerofexaminations@vnrvjiet.in\n");
+        list.add(a);
+
+        a = new Carddetails("Sports", " Dr.G.SREERAMA ","Physical Director","09440121314","sports@vnrvjiet.in");
+        list.add(a);
+
+        a = new Carddetails("ED CELL", "","","","edcell@vnrvjiet.in");
+        list.add(a);
+
+
+
+    }
 
 
     @Override
