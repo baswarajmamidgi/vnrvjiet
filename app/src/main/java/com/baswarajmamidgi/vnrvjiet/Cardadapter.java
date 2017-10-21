@@ -432,6 +432,60 @@ public class Cardadapter extends RecyclerView.Adapter<Cardadapter.MyViewHolder> 
                             context.startActivity(i);
                             break;
                         }
+
+
+
+
+
+                        case "Convergence":
+                        {
+                            Intent i = new Intent(context, Viewclubdetails.class);
+                            Bundle bundle=new Bundle();
+                            bundle.putString("name",activity);
+                            bundle.putInt("image",R.drawable.convergence);
+                            bundle.putString("youtube","https://www.youtube.com/channel/UCI_zBUeVxG_YVdxUNKWzgTw");
+
+                            bundle.putString("fblink","https://www.facebook.com/convergence.in/");
+                            bundle.putString("clubinfo"," The National Level Technical Symposium under the banner 'CONVERGENCE' has been instrumental in shifting the paradigm of usual course work. Since its inception in 1999, it has evolved as an ultimate platform for the techno maniacs. The 2016 edition has taken up an untrodden path on its way to be stupendous, throwing light on new ideas.It brings in a series of events and activities spread over 3 days involving the students of myriad disciplines and hence broadening their horizons.........");
+                            i.putExtras(bundle);
+                            context.startActivity(i);
+                            break;
+                        }
+
+                        case "Open House":
+                        {
+                            Intent i = new Intent(context, Viewclubdetails.class);
+                            Bundle bundle=new Bundle();
+                            bundle.putString("name",activity);
+                            bundle.putInt("image",R.drawable.openhouse);
+                            bundle.putString("youtube","https://www.youtube.com/channel/UC0SEHKyWbLlqZU77oypg6Ew");
+
+                            bundle.putString("fblink","https://www.facebook.com/vnropenhouse/");
+                            bundle.putString("clubinfo","OPEN HOUSE...a place where you can showcase the uniqueness of your projects or ideas with prototypes....a chance to show your abilities to the outside world...a chance to enhance your technical skills... where different colleges come together to compete and share knowledge ");
+                            i.putExtras(bundle);
+                            context.startActivity(i);
+                            break;
+                        }
+
+                        case "Sintulleshunz":
+                        {
+                            Intent i = new Intent(context, Viewclubdetails.class);
+                            Bundle bundle=new Bundle();
+                            bundle.putString("name",activity);
+                            bundle.putInt("image",R.drawable.sinti);
+                            bundle.putString("youtube","https://www.youtube.com/user/SintillashunzatVNR");
+
+                            bundle.putString("fblink","https://www.facebook.com/sintillashunz/");
+                            bundle.putString("clubinfo","Sintillashunz, since its inception in the year 2002, has been one of the biggest cultural fests in Hyderabad. Sintillashunz has always looked forward to provide an opportunity to the students to showcase their talents, compete with a wider section of students and to carve a niche for themselves on a larger platform. The fest has also served as an opportunity for the students to organize an event of such huge magnitude which throws up surprising challenges from time to time. \n" +
+                                    "\n" +
+                                    "Sintillashunz, today, has established itself as a brand, by the sheer hardwork put in by its organizing committee and the unflinching support of the college management. The geographical location of the college too has served as an added advantage in pulling huge crowds, with the college being at a distance of 6Km from JNTU. ");
+                            i.putExtras(bundle);
+                            context.startActivity(i);
+                            break;
+                        }
+
+
+
                         default:
                         {
                             Toast.makeText(context, "No activity found", Toast.LENGTH_SHORT).show();

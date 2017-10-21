@@ -1,11 +1,7 @@
 package com.baswarajmamidgi.vnrvjiet;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,32 +10,24 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import android.widget.AdapterView;
+import android.widget.CursorAdapter;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class Notifications extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private ArrayList<String> notifications;
-    List<Workshopclass> list;
-    WorkShopAdapter adapter;
-    RecyclerView recyclerView;
-
+    ListView listView;
+    ListView list;
+    Mydatabase mydatabase;
+    ArrayList<String> messages;
 
 
 
@@ -49,8 +37,35 @@ public class Notifications extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_notifications);
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
-        notifications=new ArrayList<>();
         toolbar.setTitle("Notifications");
+
+        listView= (ListView) findViewById(R.id.notifications_list);
+        mydatabase=new Mydatabase(this);
+
+        final Cursor cursor = mydatabase.getMessages();
+        String[] from = {Databasehelper.TITLE,Databasehelper.CONTENT, Databasehelper.DATETIME};
+        int[] to = {R.id.notification_title,R.id.notification_content, R.id.notification_date};
+        list = (ListView) findViewById(R.id.notifications_list);
+        CursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.notificationlistitem, cursor, from, to, 0);
+        list.setAdapter(adapter);
+        messages = new ArrayList<String>();
+        while (!cursor.isAfterLast()) {
+            messages.add(cursor.getString(cursor.getColumnIndex(Databasehelper.CONTENT)) + "@!@" + cursor.getString(cursor.getColumnIndex(Databasehelper.DATETIME)));
+            cursor.moveToNext();
+        }
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String data = messages.get(position);
+                //do on listview  click listener
+            }
+        });
+        registerForContextMenu(list);
+        adapter.notifyDataSetChanged();
+        
+        
+        
+       
         setSupportActionBar(toolbar);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -59,71 +74,8 @@ public class Notifications extends AppCompatActivity implements NavigationView.O
                 onBackPressed();
             }
         });
-        ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo info = manager.getActiveNetworkInfo();
-        final boolean isconnected = info != null && info.isConnectedOrConnecting();
-        final ProgressDialog progressDialog=new ProgressDialog(Notifications.this);
 
-        progressDialog.setMessage("Loading data...");
-        progressDialog.show();
-
-        list=new ArrayList<>();
-        adapter=new WorkShopAdapter(this,list);
-        recyclerView= (RecyclerView) findViewById(R.id.recycler_view);
-
-        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-
-
-        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-
-        final DatabaseReference databaseReference=firebaseDatabase.getReference().child("notifications");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postsnapshot : dataSnapshot.getChildren()) {
-                    Map<String, String> map = (Map)postsnapshot.getValue();
-                    Workshopclass workshopclass = new Workshopclass(map.get("info"), map.get("imageurl"));
-                    list.add(workshopclass);
-                    Log.i("log","workshoplist called");
-                    adapter.notifyDataSetChanged();
-
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-        recyclerView.setAdapter(adapter);
-
-        final Handler handler=new Handler();
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                if(!list.isEmpty()){
-                    progressDialog.dismiss();
-                }
-                handler.post(this);
-
-            }
-        });
-
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if(adapter.getItemCount()==0){
-                    if(!isconnected) {
-                        Toast.makeText(Notifications.this, R.string.NO_INTERNET, Toast.LENGTH_SHORT).show();
-                        progressDialog.dismiss();
-                        startActivity(new Intent(Notifications.this,MainActivity.class));
-                        finishAffinity();
-                    }
-
-                }
-            }
-        },3000);
+      
 
 
 
@@ -159,9 +111,7 @@ public class Notifications extends AppCompatActivity implements NavigationView.O
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        final DatabaseReference databaseReference;
-        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-        SharedPreferences sharedPreferences=getSharedPreferences("info", Context.MODE_PRIVATE);
+
         final String[] url = new String[1];
         switch (id) {
             case R.id.home:{

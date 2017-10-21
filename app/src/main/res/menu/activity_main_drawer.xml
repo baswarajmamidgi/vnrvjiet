@@ -14,6 +14,12 @@
             android:id="@+id/syallabus"
             android:icon="@drawable/ic_subject"
             android:title="Syllabus" />
+
+        <item
+            android:id="@+id/fest"
+            android:icon="@drawable/ic_group"
+            android:title="Fest" />
+
         <item
             android:id="@+id/clubs"
             android:icon="@drawable/ic_group"

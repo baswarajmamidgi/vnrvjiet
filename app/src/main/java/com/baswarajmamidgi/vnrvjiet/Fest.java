@@ -23,10 +23,9 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Clubs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Fest extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private List<Carddetails> list;
     private Cardadapter adapter;
-    private String activity="clubs";
 
 
     @Override
@@ -34,7 +33,7 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_clubsandstudentchapters);
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Clubs");
+        toolbar.setTitle("Fest");
 
         setSupportActionBar(toolbar);
 
@@ -44,7 +43,7 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
         adapter=new Cardadapter(this,list);
         RecyclerView.LayoutManager layoutManager=new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new Clubs.GridSpacingItemDecoration(2, dpToPx(10), true));
+        recyclerView.addItemDecoration(new Fest.GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
         prepareCategories();
@@ -61,57 +60,16 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
 
     }
     private void prepareCategories() {
-        if(activity.equals("clubs")) {
-            int[] images = new int[]{R.drawable.arts, R.drawable.cres, R.drawable.drama, R.drawable.edcell, R.drawable.live,R.drawable.nss, R.drawable.scintilate, R.drawable.stento,R.drawable.robotics, R.drawable.teatro, R.drawable.vjsv, R.drawable.vnrsf,R.drawable.teamrandd};
 
-            Carddetails a = new Carddetails("Creative arts", images[0]);
-            list.add(a);
-            a = new Carddetails("Crescendo", images[1]);
-            list.add(a);
-            a = new Carddetails("Dramatrix", images[2]);
-            list.add(a);
-            a = new Carddetails("ED cell", images[3]);
-            list.add(a);
-            a = new Carddetails("Live wire", images[4]);
-            list.add(a);
-            a = new Carddetails("NSS", images[5]);
-            list.add(a);
-            a = new Carddetails("Scintillate", images[6]);
-            list.add(a);
-            a = new Carddetails("Stentorian", images[7]);
-            list.add(a);
-            a = new Carddetails("Team R & D", images[12]);
-            list.add(a);
-            a = new Carddetails("Team Robotics", images[8]);
-            list.add(a);
-            a = new Carddetails("VJ Teatro", images[9]);
-            list.add(a);
-            a = new Carddetails("VJSV", images[10]);
-            list.add(a);
-            a = new Carddetails("VNR SF", images[11]);
-            list.add(a);
-        }
-        else
-        {
-            int[] images = new int[]{R.drawable.asme,R.drawable.csi, R.drawable.ieee, R.drawable.iei, R.drawable.iste,R.drawable.tedx,R.drawable.isoi};
-
-            Carddetails a = new Carddetails("ASME", images[0]);
-            list.add(a);
-            a = new Carddetails("CSI", images[1]);
-            list.add(a);
-            a = new Carddetails("IEEE", images[2]);
-            list.add(a);
-            a = new Carddetails("IEI", images[3]);
-            list.add(a);
-            a = new Carddetails("ISTE", images[4]);
-            list.add(a);
-            a = new Carddetails("TED x", images[5]);
-            list.add(a);
-            a = new Carddetails("ISOI", images[6]);
-            list.add(a);
+            int[] images = new int[]{R.drawable.convergence, R.drawable.openhouse, R.drawable.sinti};
 
 
-        }
+           Carddetails a = new Carddetails("Convergence", images[0]);
+            list.add(a);
+            a = new Carddetails("Open House", images[1]);
+            list.add(a);
+            a = new Carddetails("Sintulleshunz", images[2]);
+            list.add(a);
 
 
         adapter.notifyDataSetChanged();
@@ -168,7 +126,7 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Clubs.this, feedback.class));
+            startActivity(new Intent(Fest.this, feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -179,43 +137,43 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
 
         switch (id) {
             case R.id.home:{
-                Intent i = new Intent(Clubs.this, MainActivity.class);
+                Intent i = new Intent(Fest.this, MainActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(i);
                 finishAffinity();
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Clubs.this, Clubs.class);
+                Intent i = new Intent(Fest.this, Fest.class);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(Clubs.this, StudentChapters.class);
+                Intent i = new Intent(Fest.this, StudentChapters.class);
                 startActivity(i);
                 break;
             }
 
             case R.id.contacts: {
-                Intent i = new Intent(Clubs.this, MiscContacts.class);
+                Intent i = new Intent(Fest.this, MiscContacts.class);
                 startActivity(i);
                 break;
             }
 
             case R.id.syallabus: {
 
-                startActivity(new Intent(Clubs.this,Syllabus.class));
+                startActivity(new Intent(Fest.this,Syllabus.class));
                 break;
 
             }
             case R.id.timetable: {
 
 
-                startActivity(new Intent(Clubs.this,Timetable.class));
+                startActivity(new Intent(Fest.this,Timetable.class));
                 break;
             }
             case R.id.profile: {
-                startActivity(new Intent(Clubs.this, Studentinfo.class));
+                startActivity(new Intent(Fest.this, Studentinfo.class));
                 break;
             }
 
@@ -224,14 +182,14 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(Clubs.this, CollegeMap.class));
+                        startActivity(new Intent(Fest.this, CollegeMap.class));
 
                     }
                 });
                 break;
             }
             case R.id.website: {
-                Intent i=new Intent(Clubs.this,Webpage.class);
+                Intent i=new Intent(Fest.this,Webpage.class);
                 i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
                 startActivity(i);
                 break;
@@ -243,7 +201,7 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Clubs.this,feedback.class);
+                Intent intent = new Intent (Fest.this,feedback.class);
                 startActivity(intent);
                 break;
             }

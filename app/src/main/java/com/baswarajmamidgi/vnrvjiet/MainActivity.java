@@ -111,6 +111,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         switch (id) {
 
+            case R.id.fest: {
+                Intent i = new Intent(MainActivity.this, Fest.class);
+                startActivity(i);
+                break;
+            }
+
             case R.id.clubs: {
                 Intent i = new Intent(MainActivity.this, Clubs.class);
                 startActivity(i);

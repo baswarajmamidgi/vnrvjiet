@@ -7,12 +7,15 @@ import android.content.Intent;
 import android.media.RingtoneManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by baswarajmamidgi on 31/01/17.
@@ -20,6 +23,7 @@ import java.net.URLDecoder;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+        Log.i("log","message received");
 
         String image = remoteMessage.getNotification().getIcon();
         String title = remoteMessage.getNotification().getTitle();
@@ -31,6 +35,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             id = Integer.valueOf(obj.toString());
         }
 
+        if(title==null){
+            title="New Notification";
+        }
+
+        new Mydatabase(this).insertMessage(title,content);
+
+
         this.sendNotification(image, id, title, content, sound);
     }
 
@@ -39,7 +50,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         Log.i("log",title +" "+content);
 
-        Intent intent = new Intent(MyFirebaseMessagingService.this, MainActivity.class);
+        Intent intent = new Intent(MyFirebaseMessagingService.this, Notifications.class);
         intent.putExtra("notification", content);
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

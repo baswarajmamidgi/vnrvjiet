@@ -47,7 +47,7 @@ public class feedback extends AppCompatActivity implements NavigationView.OnNavi
         email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","baswarajmamidgi10@gmail.com",null));
+                Intent i=new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","baswarajmamidgi@gmail.com",null));
                 startActivity(i);
 
             }
@@ -79,13 +79,17 @@ public class feedback extends AppCompatActivity implements NavigationView.OnNavi
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        final String[] url = new String[1];
         switch (id) {
             case R.id.home:{
                 Intent i = new Intent(feedback.this, MainActivity.class);
                 startActivity(i);
                 break;
-            } case R.id.clubs: {
+            }
+            case R.id.fest: {
+                Intent i = new Intent(feedback.this, Fest.class);
+                startActivity(i);
+                break;
+            }case R.id.clubs: {
                 Intent i = new Intent(feedback.this, Clubs.class);
                 startActivity(i);
                 break;
@@ -135,7 +139,7 @@ public class feedback extends AppCompatActivity implements NavigationView.OnNavi
                 break;
             }
             case R.id.youtube:{
-                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_WEBSITE)));
+                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_YOUTUBE)));
                 startActivity(i);
                 break;
             }
