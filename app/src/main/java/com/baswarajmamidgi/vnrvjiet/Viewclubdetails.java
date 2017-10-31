@@ -98,7 +98,7 @@ public class Viewclubdetails extends AppCompatActivity implements NavigationView
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Viewclubdetails.this, feedback.class));
+            startActivity(new Intent(Viewclubdetails.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -172,7 +172,7 @@ public class Viewclubdetails extends AppCompatActivity implements NavigationView
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Viewclubdetails.this,feedback.class);
+                Intent intent = new Intent (Viewclubdetails.this,Feedback.class);
                 startActivity(intent);
                 break;
             }

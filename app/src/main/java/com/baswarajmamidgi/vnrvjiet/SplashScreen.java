@@ -11,13 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-
 public class SplashScreen extends AppCompatActivity {
 
-    public static ArrayList<String> notifications=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +45,7 @@ public class SplashScreen extends AppCompatActivity {
         switch (requestCode) {
             case 10:
                 if (!(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    Toast.makeText(this, "Permissions denied.You can't access Time table and Syllabus", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Permissions denied.You can't access all features ", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }

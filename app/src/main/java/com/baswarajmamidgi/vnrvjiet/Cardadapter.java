@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -113,7 +112,9 @@ public class Cardadapter extends RecyclerView.Adapter<Cardadapter.MyViewHolder> 
                         }
                         case "Results":
                         {
-                            Toast.makeText(context, "Coming Soon", Toast.LENGTH_SHORT).show();
+                            Intent i=new Intent(context,Webpage.class);
+                            i.putExtra("webpage","http://vnrvjietexams.esy.es/");
+                            context.startActivity(i);
                             break;
                         }
 

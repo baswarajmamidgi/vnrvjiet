@@ -2,6 +2,7 @@ package com.baswarajmamidgi.vnrvjiet;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -10,7 +11,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -117,6 +117,11 @@ public class Documents extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(new Intent(Documents.this,MainActivity.class));
                 break;
             }
+            case R.id.fest: {
+                Intent i = new Intent(Documents.this, Fest.class);
+                startActivity(i);
+                break;
+            }
 
             case R.id.clubs: {
                 Intent i = new Intent(Documents.this, Clubs.class);
@@ -167,7 +172,7 @@ public class Documents extends AppCompatActivity implements NavigationView.OnNav
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Documents.this,feedback.class);
+                Intent intent = new Intent (Documents.this,Feedback.class);
                 startActivity(intent);
                 break;
             }

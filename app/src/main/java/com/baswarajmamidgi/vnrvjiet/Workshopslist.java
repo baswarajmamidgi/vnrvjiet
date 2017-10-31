@@ -138,7 +138,7 @@ public class Workshopslist extends AppCompatActivity  implements NavigationView.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Workshopslist.this, feedback.class));
+            startActivity(new Intent(Workshopslist.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -212,7 +212,7 @@ public class Workshopslist extends AppCompatActivity  implements NavigationView.
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Workshopslist.this,feedback.class);
+                Intent intent = new Intent (Workshopslist.this,Feedback.class);
                 startActivity(intent);
                 break;
             }

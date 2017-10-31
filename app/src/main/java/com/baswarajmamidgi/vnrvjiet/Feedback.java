@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-public class feedback extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Feedback extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     @Override
@@ -81,43 +81,43 @@ public class feedback extends AppCompatActivity implements NavigationView.OnNavi
         int id = item.getItemId();
         switch (id) {
             case R.id.home:{
-                Intent i = new Intent(feedback.this, MainActivity.class);
+                Intent i = new Intent(Feedback.this, MainActivity.class);
                 startActivity(i);
                 break;
             }
             case R.id.fest: {
-                Intent i = new Intent(feedback.this, Fest.class);
+                Intent i = new Intent(Feedback.this, Fest.class);
                 startActivity(i);
                 break;
             }case R.id.clubs: {
-                Intent i = new Intent(feedback.this, Clubs.class);
+                Intent i = new Intent(Feedback.this, Clubs.class);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
-                Intent i = new Intent(feedback.this, StudentChapters.class);
+                Intent i = new Intent(Feedback.this, StudentChapters.class);
                 startActivity(i);
                 break;
             }
 
             case R.id.contacts: {
-                Intent i = new Intent(feedback.this, MiscContacts.class);
+                Intent i = new Intent(Feedback.this, MiscContacts.class);
                 startActivity(i);
                 break;
             }
 
             case R.id.syallabus: {
 
-                startActivity(new Intent(feedback.this,Syllabus.class));
+                startActivity(new Intent(Feedback.this,Syllabus.class));
                 break;
 
             }
             case R.id.timetable: {
-                startActivity(new Intent(feedback.this,Timetable.class));
+                startActivity(new Intent(Feedback.this,Timetable.class));
                 break;
             }
             case R.id.profile: {
-                startActivity(new Intent(feedback.this, Studentinfo.class));
+                startActivity(new Intent(Feedback.this, Studentinfo.class));
                 break;
             }
 
@@ -126,14 +126,14 @@ public class feedback extends AppCompatActivity implements NavigationView.OnNavi
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(feedback.this, CollegeMap.class));
+                        startActivity(new Intent(Feedback.this, CollegeMap.class));
 
                     }
                 });
                 break;
             }
             case R.id.website: {
-                Intent i=new Intent(feedback.this,Webpage.class);
+                Intent i=new Intent(Feedback.this,Webpage.class);
                 i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
                 startActivity(i);
                 break;
@@ -143,12 +143,7 @@ public class feedback extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(i);
                 break;
             }
-            case R.id.Feedback:
-            {
-                Intent intent = new Intent (feedback.this,feedback.class);
-                startActivity(intent);
-                break;
-            }
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

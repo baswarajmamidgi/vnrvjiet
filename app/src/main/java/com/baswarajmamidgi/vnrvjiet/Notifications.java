@@ -102,7 +102,7 @@ public class Notifications extends AppCompatActivity implements NavigationView.O
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Notifications.this, feedback.class));
+            startActivity(new Intent(Notifications.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -112,10 +112,15 @@ public class Notifications extends AppCompatActivity implements NavigationView.O
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        final String[] url = new String[1];
         switch (id) {
             case R.id.home:{
                 Intent i = new Intent(Notifications.this, MainActivity.class);
+                startActivity(i);
+                break;
+            }
+
+            case R.id.fest: {
+                Intent i = new Intent(Notifications.this, Fest.class);
                 startActivity(i);
                 break;
             }
@@ -176,7 +181,7 @@ public class Notifications extends AppCompatActivity implements NavigationView.O
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Notifications.this,feedback.class);
+                Intent intent = new Intent (Notifications.this,Feedback.class);
                 startActivity(intent);
                 break;
             }

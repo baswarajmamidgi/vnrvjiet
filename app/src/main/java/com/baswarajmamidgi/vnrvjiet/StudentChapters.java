@@ -138,7 +138,7 @@ public class StudentChapters extends AppCompatActivity implements NavigationView
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(StudentChapters.this, feedback.class));
+            startActivity(new Intent(StudentChapters.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -155,16 +155,18 @@ public class StudentChapters extends AppCompatActivity implements NavigationView
                 finishAffinity();
                 break;
             }
+
+            case R.id.fest: {
+                Intent i = new Intent(StudentChapters.this, Fest.class);
+                startActivity(i);
+                break;
+            }
             case R.id.clubs: {
                 Intent i = new Intent(StudentChapters.this, Clubs.class);
                 startActivity(i);
                 break;
             }
-            case R.id.chapter: {
-                Intent i = new Intent(StudentChapters.this, StudentChapters.class);
-                startActivity(i);
-                break;
-            }
+
 
             case R.id.contacts: {
                 Intent i = new Intent(StudentChapters.this, MiscContacts.class);
@@ -213,7 +215,7 @@ public class StudentChapters extends AppCompatActivity implements NavigationView
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (StudentChapters.this,feedback.class);
+                Intent intent = new Intent (StudentChapters.this,Feedback.class);
                 startActivity(intent);
                 break;
             }
@@ -237,7 +239,7 @@ public class StudentChapters extends AppCompatActivity implements NavigationView
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            startActivity(new Intent(this,MainActivity.class));
         }
     }
 

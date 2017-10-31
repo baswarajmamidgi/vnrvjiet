@@ -42,7 +42,7 @@
                 android:id="@+id/details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/thumbnail"
+                android:layout_alignLeft="@+id/workshopthumnail"
                 android:layout_alignParentTop="false"
                 android:layout_centerHorizontal="false"
                 android:layout_marginLeft="160dp"

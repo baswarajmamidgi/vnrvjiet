@@ -153,7 +153,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Gallery.this, feedback.class));
+            startActivity(new Intent(Gallery.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -166,6 +166,11 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
         switch (id) {
             case R.id.home:{
                 Intent i = new Intent(Gallery.this, MainActivity.class);
+                startActivity(i);
+                break;
+            }
+            case R.id.fest: {
+                Intent i = new Intent(Gallery.this, Fest.class);
                 startActivity(i);
                 break;
             }
@@ -228,7 +233,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Gallery.this,feedback.class);
+                Intent intent = new Intent (Gallery.this,Feedback.class);
                 startActivity(intent);
                 break;
             }

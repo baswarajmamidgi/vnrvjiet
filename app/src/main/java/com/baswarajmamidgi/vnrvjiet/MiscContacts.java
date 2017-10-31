@@ -72,19 +72,16 @@ public class MiscContacts extends AppCompatActivity implements NavigationView.On
         list.add(a);
 
 
-         a = new Carddetails("Girls Hostel", "DR L. PADMA SREE","Girls Hostel Incharge","","padmasree_l@vnrvjiet.in");
+         a = new Carddetails("Girls Hostel", "DR L. PADMA SREE"," ","09441253587","padmasree_l@vnrvjiet.in");
         list.add(a);
-        a = new Carddetails("Boys Hostel", " Boppana.Narendra Kumar ","Boys Hostel Incharge","","narendrakumar_b@vnrvjiet.in");
+        a = new Carddetails("Boys Hostel", " Boppana.Narendra Kumar "," ","","narendrakumar_b@vnrvjiet.in");
         list.add(a);
 
-
-        a = new Carddetails("EXAMINATION SECTION", " Dr. K.Ramujee ","Dean(Controller of Examinations)"," ","controllerofexaminations@vnrvjiet.in\n");
-        list.add(a);
 
         a = new Carddetails("Sports", " Dr.G.SREERAMA ","Physical Director","09440121314","sports@vnrvjiet.in");
         list.add(a);
 
-        a = new Carddetails("ED CELL", "","","","edcell@vnrvjiet.in");
+        a = new Carddetails("ED CELL", "Victor Samuel","","","edcell@vnrvjiet.in");
         list.add(a);
 
 
@@ -101,7 +98,7 @@ public class MiscContacts extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(MiscContacts.this, feedback.class));
+            startActivity(new Intent(MiscContacts.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -117,24 +114,22 @@ public class MiscContacts extends AppCompatActivity implements NavigationView.On
                 startActivity(i);
                 break;
             }
+            case R.id.fest: {
+                Intent i = new Intent(MiscContacts.this, Fest.class);
+                startActivity(i);
+                break;
+            }
             case R.id.clubs: {
                 Intent i = new Intent(MiscContacts.this, Clubs.class);
-                i.putExtra("activity", R.string.CLUBS);
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
                 Intent i = new Intent(MiscContacts.this, Clubs.class);
-                i.putExtra("activity", R.string.CHAPTERS);
                 startActivity(i);
                 break;
             }
 
-            case R.id.contacts: {
-                Intent i = new Intent(MiscContacts.this, MiscContacts.class);
-                startActivity(i);
-                break;
-            }
 
             case R.id.syallabus: {
 
@@ -169,13 +164,13 @@ public class MiscContacts extends AppCompatActivity implements NavigationView.On
                 break;
             }
             case R.id.youtube:{
-                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_WEBSITE)));
+                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.VNR_YOUTUBE)));
                 startActivity(i);
                 break;
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (MiscContacts.this,feedback.class);
+                Intent intent = new Intent (MiscContacts.this,Feedback.class);
                 startActivity(intent);
                 break;
             }
@@ -195,7 +190,7 @@ public class MiscContacts extends AppCompatActivity implements NavigationView.On
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            startActivity(new Intent(this,MainActivity.class));
         }
     }
 

@@ -23,6 +23,7 @@
     <string name="CHAPTERS">chapters</string>
     <string name="ERROR_OCCURED">Error occurred .please try after some time</string>
     <string name="CONNECT_TO_INTERNET">Connect to Internet to download the data.</string>
+    <string name="title_activity_edcell">Edcell</string>
 
 
 </resources>

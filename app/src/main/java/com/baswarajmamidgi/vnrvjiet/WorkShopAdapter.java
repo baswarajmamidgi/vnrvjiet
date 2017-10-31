@@ -3,6 +3,7 @@ package com.baswarajmamidgi.vnrvjiet;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,13 +56,19 @@ public class WorkShopAdapter  extends RecyclerView.Adapter<WorkShopAdapter.MyVie
 
         holder.textView.setText(workshopclass.getName()+"\n");
         if(workshopclass.getDuration()!=null) {
-            holder.textView.append(workshopclass.getDuration()+"n");
+            holder.textView.append(workshopclass.getDuration()+"\n");
+            Linkify.addLinks(holder.textView, Linkify.ALL);
+
         }
         if(workshopclass.getRegistrationfee()!=null) {
             holder.textView.append(workshopclass.getRegistrationfee()+"\n");
+            Linkify.addLinks(holder.textView, Linkify.ALL);
+
         }
         if(workshopclass.getContactno()!=null) {
             holder.textView.append(workshopclass.getContactno());
+            Linkify.addLinks(holder.textView, Linkify.ALL);
+
         }
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override

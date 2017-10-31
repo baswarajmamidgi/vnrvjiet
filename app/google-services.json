@@ -1,43 +1,35 @@
 {
   "project_info": {
-    "project_number": "689061294820",
-    "firebase_url": "https://vnr-vjiet.firebaseio.com",
-    "project_id": "vnr-vjiet",
-    "storage_bucket": "vnr-vjiet.appspot.com"
+    "project_number": "894255079958",
+    "firebase_url": "https://vnr-vjietedu.firebaseio.com",
+    "project_id": "vnr-vjietedu",
+    "storage_bucket": "vnr-vjietedu.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:689061294820:android:28272fbd38f3ab9d",
+        "mobilesdk_app_id": "1:894255079958:android:283e44c841199141",
         "android_client_info": {
-          "package_name": "com.baswarajmamidgi.vnrvjiet"
+          "package_name": "com.vnrvjietedu.vnrvjiet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "689061294820-qmqe7j446relb13iqrissfadtf416n6m.apps.googleusercontent.com",
+          "client_id": "894255079958-32uufnc6dptdnsm9ktcp5ofutsrldf5h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.baswarajmamidgi.vnrvjiet",
-            "certificate_hash": "14240aa023e0685f9c4e37755d2ca224b4657cf2"
+            "package_name": "com.vnrvjietedu.vnrvjiet",
+            "certificate_hash": "a215517c94550526c516d59747fc28d6b44f3b72"
           }
         },
         {
-          "client_id": "689061294820-nndtk661v0iqkusdhpm08fvs25h1b9ah.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.baswarajmamidgi.vnrvjiet",
-            "certificate_hash": "c7896b9ae262d24aefd545e6bda8076461899c64"
-          }
-        },
-        {
-          "client_id": "689061294820-ad2us2296nbs4olbmnpq732s5jijc579.apps.googleusercontent.com",
+          "client_id": "894255079958-6n9th4gut4vugcjmtd7fpl09do4ersqj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCpVNLAzlNrW2u_p5p8kIhHyYvr3ux5_cQ"
+          "current_key": "AIzaSyB0vCkfnO_-kapV17ETcvrqo4PMyVEJwVE"
         }
       ],
       "services": {
@@ -48,51 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "689061294820-ad2us2296nbs4olbmnpq732s5jijc579.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:689061294820:android:ed3b83d7d0f2d9cf",
-        "android_client_info": {
-          "package_name": "com.baswarajmamidgi.vnrstaff"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "689061294820-5s2vbgse3mf0ilssqf7gh7p73kulal45.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.baswarajmamidgi.vnrstaff",
-            "certificate_hash": "f04083e7f484ff6f195d20be3718ad79e7429aaa"
-          }
-        },
-        {
-          "client_id": "689061294820-ad2us2296nbs4olbmnpq732s5jijc579.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCpVNLAzlNrW2u_p5p8kIhHyYvr3ux5_cQ"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "689061294820-ad2us2296nbs4olbmnpq732s5jijc579.apps.googleusercontent.com",
+              "client_id": "894255079958-6n9th4gut4vugcjmtd7fpl09do4ersqj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

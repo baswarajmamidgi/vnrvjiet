@@ -168,7 +168,7 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Clubs.this, feedback.class));
+            startActivity(new Intent(Clubs.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -186,7 +186,7 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Clubs.this, Clubs.class);
+                Intent i = new Intent(Clubs.this, Fest.class);
                 startActivity(i);
                 break;
             }
@@ -243,7 +243,7 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Clubs.this,feedback.class);
+                Intent intent = new Intent (Clubs.this,Feedback.class);
                 startActivity(intent);
                 break;
             }
@@ -267,7 +267,7 @@ public class Clubs extends AppCompatActivity implements NavigationView.OnNavigat
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            startActivity(new Intent(this,MainActivity.class));
         }
     }
 

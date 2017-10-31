@@ -65,7 +65,7 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
         final boolean isconnected = info != null && info.isConnectedOrConnecting();
         final ProgressDialog progressDialog=new ProgressDialog(Faculty.this);
         progressDialog.setMessage(getString(R.string.LOADING_DATA));
-        progressDialog.setCancelable(false);
+        progressDialog.setCancelable(true);
         progressDialog.show();
         mDatabase=database.getReference().child("hods").child(branchname);
         ListView listView= (ListView) findViewById(R.id.stafflist);
@@ -223,7 +223,7 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Faculty.this, feedback.class));
+            startActivity(new Intent(Faculty.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -236,6 +236,11 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
         switch (id) {
             case R.id.home:{
                 Intent i = new Intent(Faculty.this, MainActivity.class);
+                startActivity(i);
+                break;
+            }
+            case R.id.fest: {
+                Intent i = new Intent(Faculty.this, Fest.class);
                 startActivity(i);
                 break;
             }
@@ -296,7 +301,7 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Faculty.this,feedback.class);
+                Intent intent = new Intent (Faculty.this,Feedback.class);
                 startActivity(intent);
                 break;
             }

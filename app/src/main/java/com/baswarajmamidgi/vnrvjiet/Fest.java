@@ -68,7 +68,7 @@ public class Fest extends AppCompatActivity implements NavigationView.OnNavigati
             list.add(a);
             a = new Carddetails("Open House", images[1]);
             list.add(a);
-            a = new Carddetails("Sintulleshunz", images[2]);
+            a = new Carddetails("Sintillashunz", images[2]);
             list.add(a);
 
 
@@ -126,7 +126,7 @@ public class Fest extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Fest.this, feedback.class));
+            startActivity(new Intent(Fest.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -144,7 +144,7 @@ public class Fest extends AppCompatActivity implements NavigationView.OnNavigati
                 break;
             }
             case R.id.clubs: {
-                Intent i = new Intent(Fest.this, Fest.class);
+                Intent i = new Intent(Fest.this, Clubs.class);
                 startActivity(i);
                 break;
             }
@@ -201,7 +201,7 @@ public class Fest extends AppCompatActivity implements NavigationView.OnNavigati
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Fest.this,feedback.class);
+                Intent intent = new Intent (Fest.this,Feedback.class);
                 startActivity(intent);
                 break;
             }
@@ -225,7 +225,7 @@ public class Fest extends AppCompatActivity implements NavigationView.OnNavigati
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            startActivity(new Intent(this,MainActivity.class));
         }
     }
 

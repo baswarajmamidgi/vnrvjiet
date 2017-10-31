@@ -22,8 +22,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 
@@ -174,7 +172,7 @@ public class Studentinfo extends AppCompatActivity implements NavigationView.OnN
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Studentinfo.this, feedback.class));
+            startActivity(new Intent(Studentinfo.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -182,10 +180,7 @@ public class Studentinfo extends AppCompatActivity implements NavigationView.OnN
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        final DatabaseReference databaseReference;
-        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-        SharedPreferences sharedPreferences=getSharedPreferences("info", Context.MODE_PRIVATE);
-        final String[] url = new String[1];
+
         switch (id) {
 
             case R.id.home:{
@@ -193,15 +188,18 @@ public class Studentinfo extends AppCompatActivity implements NavigationView.OnN
                 startActivity(i);
                 break;
             }
+            case R.id.fest: {
+                Intent i = new Intent(Studentinfo.this, Fest.class);
+                startActivity(i);
+                break;
+            }
             case R.id.clubs: {
                 Intent i = new Intent(Studentinfo.this, Clubs.class);
-                i.putExtra("activity", "clubs");
                 startActivity(i);
                 break;
             }
             case R.id.chapter: {
                 Intent i = new Intent(Studentinfo.this, Clubs.class);
-                i.putExtra("activity", "chapters");
                 startActivity(i);
                 break;
             }
@@ -252,7 +250,7 @@ public class Studentinfo extends AppCompatActivity implements NavigationView.OnN
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Studentinfo.this,feedback.class);
+                Intent intent = new Intent (Studentinfo.this,Feedback.class);
                 startActivity(intent);
                 break;
             }

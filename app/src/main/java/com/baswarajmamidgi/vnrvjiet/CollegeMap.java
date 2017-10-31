@@ -168,6 +168,16 @@ public class CollegeMap extends FragmentActivity implements OnMapReadyCallback ,
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
+            case R.id.home: {
+                Intent i = new Intent(CollegeMap.this, MainActivity.class);
+                startActivity(i);
+                break;
+            }
+            case R.id.fest: {
+                Intent i = new Intent(CollegeMap.this, Fest.class);
+                startActivity(i);
+                break;
+            }
 
             case R.id.clubs: {
                 Intent i = new Intent(CollegeMap.this, Clubs.class);
@@ -203,17 +213,7 @@ public class CollegeMap extends FragmentActivity implements OnMapReadyCallback ,
                 break;
             }
 
-            case R.id.collegemap: {
-                Handler handler=new Handler();
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        startActivity(new Intent(CollegeMap.this, CollegeMap.class));
 
-                    }
-                });
-                break;
-            }
             case R.id.website: {
                 Intent i=new Intent(CollegeMap.this,Webpage.class);
                 i.putExtra("webpage",getString(R.string.VNR_WEBSITE));
@@ -227,7 +227,7 @@ public class CollegeMap extends FragmentActivity implements OnMapReadyCallback ,
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (CollegeMap.this,feedback.class);
+                Intent intent = new Intent (CollegeMap.this,Feedback.class);
                 startActivity(intent);
                 break;
             }
@@ -248,7 +248,7 @@ public class CollegeMap extends FragmentActivity implements OnMapReadyCallback ,
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            startActivity(new Intent(this,MainActivity.class));
         }
     }
 }

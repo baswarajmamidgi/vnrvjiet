@@ -96,7 +96,7 @@ public class Library extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Library.this, feedback.class));
+            startActivity(new Intent(Library.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -170,7 +170,7 @@ public class Library extends AppCompatActivity implements NavigationView.OnNavig
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Library.this,feedback.class);
+                Intent intent = new Intent (Library.this,Feedback.class);
                 startActivity(intent);
                 break;
             }

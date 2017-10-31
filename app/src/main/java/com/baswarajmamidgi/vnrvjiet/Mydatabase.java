@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.design.widget.TextInputEditText;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

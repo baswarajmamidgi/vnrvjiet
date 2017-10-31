@@ -110,7 +110,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.help){
-            startActivity(new Intent(Timetable.this, feedback.class));
+            startActivity(new Intent(Timetable.this, Feedback.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -175,7 +175,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (Timetable.this,feedback.class);
+                Intent intent = new Intent (Timetable.this,Feedback.class);
                 startActivity(intent);
                 break;
             }

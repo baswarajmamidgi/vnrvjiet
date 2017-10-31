@@ -28,14 +28,17 @@ public class Webpage extends AppCompatActivity {
         toolbar.setTitle(url);
         setSupportActionBar(toolbar);
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Activity.CONNECTIVITY_SERVICE);
-        if(cm.getActiveNetworkInfo().isConnected()){
+        if (cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
             webView.loadUrl(url);
         }
-        else{
+
+            else{
+
             webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
             webView.loadUrl(url);
         }
+
 
         webView.setWebViewClient(new WebViewClient()
         {

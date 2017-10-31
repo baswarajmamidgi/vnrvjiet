@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity
             }
             case R.id.Feedback:
             {
-                Intent intent = new Intent (MainActivity.this,feedback.class);
+                Intent intent = new Intent (MainActivity.this,Feedback.class);
                 startActivity(intent);
                 break;
             }
