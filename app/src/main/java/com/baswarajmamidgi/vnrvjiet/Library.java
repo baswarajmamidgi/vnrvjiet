@@ -46,7 +46,7 @@ public class Library extends AppCompatActivity implements NavigationView.OnNavig
         Button library= (Button) findViewById(R.id.digilib);
         final AlertDialog.Builder alertdialog=new AlertDialog.Builder(Library.this);
         alertdialog.setTitle("Connect to Digi Library");
-        alertdialog.setMessage("Make sure you are connected to college wifi.");
+        alertdialog.setMessage("Make sure you are connected to College WIFI.");
 
         alertdialog.setPositiveButton("continue", new DialogInterface.OnClickListener() {
             @Override

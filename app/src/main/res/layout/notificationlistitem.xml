@@ -25,13 +25,14 @@
         android:id="@+id/notification_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/notification_title"
+        android:layout_marginTop="9dp"
+        android:autoLink="all"
         android:maxLines="3"
         android:text="TextView"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="9dp"
-        android:layout_below="@+id/notification_title"
-        android:layout_alignParentStart="true" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/notification_date"

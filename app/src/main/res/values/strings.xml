@@ -11,9 +11,9 @@
     <string name="vnr_vjiet">VNR VJIET</string>
     <string name="loading_data">Loading data…</string>
     <string name="NO_INTERNET">No Internet</string>
-    <string name="LIBRARY_INTRO">The library holds over 15,444 titles, 73,212 books, 152 national journals and 782 international journals (including online journals) and 1750 audio-visual materials. There are 1867 back volumes of the important journals in bound form. The students have access to 32 magazines and 8 newspapers (6-English, 2-Telugu).</string>
-    <string name="LIBRARY_DESC">The institute has digital library with around 20–30 terminals. It is fully automated with DSpace Digital Library package. It has a collection of 1533 e-books, 568 journals from IEEE, science direct, ASCE, Springer, ASME Publications and 2526 e-articles at present. It is also accessible to students through college LAN.</string>
-    <string name="LIBRARY_MORE">Within the digital library, an e-learning center has been established with 5100+ video lectures from all IIT\'s, MIT, University of Berkley etc., related to all engineering subjects. This is also accessible to students by visiting server IP address within the college LAN.</string>
+    <string name="LIBRARY_INTRO">The library holds over 15,444 titles, 73,212 books, 152 national journals and 782 international journals and 1750 audio-visual materials. There are 1867 back volumes of the important journals in bound form. The students have access to 32 magazines and 8 newspapers (6-English, 2-Telugu).\n\n</string>
+    <string name="LIBRARY_DESC">The institute has digital library with around 20–30 terminals. It is fully automated with DSpace Digital Library package. It has a collection of 1533 e-books, 568 journals from IEEE, science direct, ASCE, Springer, ASME Publications and 2526 e-articles at present.\n\n</string>
+    <string name="LIBRARY_MORE">Within the digital library, an e-learning center has been established with 5100+ video lectures from all IIT\'s, MIT, University of Berkley etc., related to all engineering subjects.</string>
     <string name="VNR_YOUTUBE">https://www.youtube.com/channel/UC_-pUnKSmSBCDnI1TVBuBzA</string>
     <string name="VNR_WEBSITE">http://www.vnrvjiet.ac.in/</string>
     <string name="COMING_SOON">Coming Soon</string>

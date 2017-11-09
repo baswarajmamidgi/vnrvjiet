@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
+        android:fillViewport="true"
         android:paddingLeft="2dp"
         android:paddingRight="2dp">
 
@@ -37,6 +38,7 @@
                 app:srcCompat="@drawable/vnrlogo" />
 
             <LinearLayout
+                android:id="@+id/linearlayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/librarylogo"
@@ -50,20 +52,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/digilib"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@+id/linearlayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:elevation="8dp"
+                android:text="Goto Digi Library"
+                android:textColor="@color/white"
+                android:theme="@style/MyButton" />
+
         </RelativeLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/digilib"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@+id/scrollView"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/colorPrimary"
-        android:elevation="8dp"
-        android:textColor="@color/white"
-        android:theme="@style/MyButton"
-        android:layout_marginTop="14dp"
-        android:text="Goto Digi Library" />
 </RelativeLayout>
 
