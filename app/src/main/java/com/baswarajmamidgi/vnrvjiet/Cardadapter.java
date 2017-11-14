@@ -468,7 +468,7 @@ public class Cardadapter extends RecyclerView.Adapter<Cardadapter.MyViewHolder> 
                             break;
                         }
 
-                        case "Sintulleshunz":
+                        case "Sintillashunz":
                         {
                             Intent i = new Intent(context, Viewclubdetails.class);
                             Bundle bundle=new Bundle();

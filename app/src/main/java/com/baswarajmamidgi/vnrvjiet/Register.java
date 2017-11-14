@@ -84,10 +84,12 @@ public class Register extends AppCompatActivity {
             Toast.makeText(this, "enter Email", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(!Pattern.matches(EMAIL_PATTERN,mail)) {
+       /* if(!Pattern.matches(EMAIL_PATTERN,mail)) {
             Toast.makeText(this, "Enter valid email id eg:test@vnrvjiet.in", Toast.LENGTH_SHORT).show();
             return;
-        }
+        } */
+
+       
             progressDialog.show();
         mAuth.createUserWithEmailAndPassword(mail, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
