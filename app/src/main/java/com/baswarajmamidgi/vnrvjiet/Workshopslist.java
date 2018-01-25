@@ -1,5 +1,6 @@
 package com.baswarajmamidgi.vnrvjiet;
 
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -15,17 +16,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.google.android.gms.common.api.Response;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -66,7 +78,7 @@ public class Workshopslist extends AppCompatActivity  implements NavigationView.
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-
+        /*
         valueEventListener=mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -83,6 +95,48 @@ public class Workshopslist extends AppCompatActivity  implements NavigationView.
 
             }
         });
+        */
+        String url="https://developer.eventshigh.com/events/hyderabad?key=ev3nt5h1ghte5tK3y";
+
+        //*******************************************************************
+
+        JsonArrayRequest arrReq = new JsonArrayRequest(Request.Method.GET, url,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        // Check the length of our response (to see if the user has any repos)
+                        if (response.length() > 0) {
+                            // The user does have repos, so let's loop through them all.
+                            for (int i = 0; i < response.length(); i++) {
+                                try {
+                                    // For each repo, add a new line to our repo list.
+                                    JSONObject jsonObj = response.getJSONObject(i);
+                                    String repoName = jsonObj.get("name").toString();
+                                    String lastUpdated = jsonObj.get("updated_at").toString();
+                                } catch (JSONException e) {
+                                    // If there is an error then output this to the logs.
+                                    Log.e("Volley", "Invalid JSON Object.");
+                                }
+
+                            }
+                        } else {
+                            // The user didn't have any repos.
+                            Toast.makeText(Workshopslist.this, "No data  available", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // If there a HTTP error then add a note to our repo list.
+                        Log.e("Volley", error.toString());
+                    }
+                }
+        );
+
+        //*************************************************************************
 
         recyclerView.setAdapter(adapter);
 

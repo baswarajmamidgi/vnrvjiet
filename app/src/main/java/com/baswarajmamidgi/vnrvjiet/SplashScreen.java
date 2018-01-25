@@ -46,7 +46,7 @@ public class SplashScreen extends AppCompatActivity {
             case 10:
                 if (!(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                     Toast.makeText(this, "Permissions denied.You can't access all features ", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), Loginactivity.class));
                     finish();
                 }
                 else

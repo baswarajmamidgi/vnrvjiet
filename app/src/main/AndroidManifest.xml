@@ -58,6 +58,7 @@
         <activity android:name="com.baswarajmamidgi.vnrvjiet.Feedback" />
         <activity android:name="com.baswarajmamidgi.vnrvjiet.Fest" />
         <activity android:name="com.baswarajmamidgi.vnrvjiet.StudentChapters" />
+
         <activity
             android:name="com.baswarajmamidgi.vnrvjiet.SplashScreen"
             android:theme="@style/SplashTheme">
@@ -67,6 +68,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name="com.baswarajmamidgi.vnrvjiet.Gallery" />
         <activity android:name="com.baswarajmamidgi.vnrvjiet.Timetable" />
         <activity android:name="com.baswarajmamidgi.vnrvjiet.Syllabus" />

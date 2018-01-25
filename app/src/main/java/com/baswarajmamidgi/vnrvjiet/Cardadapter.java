@@ -64,6 +64,14 @@ public class Cardadapter extends RecyclerView.Adapter<Cardadapter.MyViewHolder> 
                     Log.i("log cardadapter",activity);
                     switch (activity)
                     {
+                        case "Attendence":
+                        {
+                            Intent i=new Intent(context,Webpage.class);
+                            i.putExtra("webpage","http://automation.vnrvjiet.ac.in/eduprime/eduprime");
+                            context.startActivity(i);
+                            break;
+                        }
+
                         case "Departments":
                         {
                         Log.i("log","departments clicked");
@@ -113,7 +121,7 @@ public class Cardadapter extends RecyclerView.Adapter<Cardadapter.MyViewHolder> 
                         case "Results":
                         {
                             Intent i=new Intent(context,Webpage.class);
-                            i.putExtra("webpage","http://vnrvjietexams.esy.es/");
+                            i.putExtra("webpage","http://vnrvjiet.esy.es/");
                             context.startActivity(i);
                             break;
                         }

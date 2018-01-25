@@ -187,19 +187,21 @@ public class MainActivity extends AppCompatActivity
 
 
     private void prepareCategories() {
-        int[] images=new int[]{R.drawable.dept,R.drawable.docs,R.drawable.workshops,R.drawable.imagegallery,R.drawable.lib,R.drawable.result};
+        int[] images=new int[]{R.drawable.attendance,R.drawable.dept,R.drawable.docs,R.drawable.workshops,R.drawable.imagegallery,R.drawable.lib,R.drawable.result};
 
-        Carddetails a=new Carddetails("Departments",images[0]);
+        Carddetails a=new Carddetails("Attendence",images[0]);
         list.add(a);
-        a=new Carddetails("Documents",images[1]);
+        a=new Carddetails("Departments",images[1]);
         list.add(a);
-        a=new Carddetails("Events & Workshops",images[2]);
+        a=new Carddetails("Documents",images[2]);
         list.add(a);
-        a=new Carddetails("Gallery",images[3]);
+        a=new Carddetails("Events & Workshops",images[3]);
         list.add(a);
-        a=new Carddetails("Library",images[4]);
+        a=new Carddetails("Gallery",images[4]);
         list.add(a);
-        a=new Carddetails("Results",images[5]);
+        a=new Carddetails("Library",images[5]);
+        list.add(a);
+        a=new Carddetails("Results",images[6]);
         list.add(a);
 
 
