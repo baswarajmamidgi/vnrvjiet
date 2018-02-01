@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.ViewSwitcher;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +43,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //FirebaseMessaging.getInstance().subscribeToTopic("test");
 
-         imageSwitcher= (ImageSwitcher) findViewById(R.id.imageswitcher);
+
+        imageSwitcher= (ImageSwitcher) findViewById(R.id.imageswitcher);
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
@@ -171,9 +174,9 @@ public class MainActivity extends AppCompatActivity
             }
             case R.id.logout:
             {
-                FirebaseAuth mAuth=FirebaseAuth.getInstance();
-                mAuth.signOut();
-                startActivity(new Intent(MainActivity.this,Loginactivity.class));
+                //FirebaseAuth mAuth=FirebaseAuth.getInstance();
+                //mAuth.signOut();
+                //startActivity(new Intent(MainActivity.this,Loginactivity.class));
                 finishAffinity();
             }
         }

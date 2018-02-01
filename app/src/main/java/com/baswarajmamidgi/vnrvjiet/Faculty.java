@@ -50,7 +50,7 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
         setSupportActionBar(toolbar);
 
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,6 +125,7 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
         String[] from={"name","designation","email",};
         int[]  to={R.id.faculty_name,R.id.designation,R.id.email};
         cursorAdapter=new SimpleCursorAdapter(this,R.layout.adapterview,matrixCursor,from,to,0);
+        Log.i("log1",branchname);
         mDatabase=database.getReference().child("branches").child(branchname);
         valueEventListener=mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -141,6 +142,8 @@ public class Faculty extends AppCompatActivity implements NavigationView.OnNavig
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+                Log.i("log",databaseError.toString());
+                progressDialog.dismiss();
 
             }
 

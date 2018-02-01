@@ -40,7 +40,7 @@ public class Mydatabase {
     {
 
         SharedPreferences settings = context.getSharedPreferences("settings", 0);
-        String order = settings.getString("sort", " ASC");
+        String order = settings.getString("sort", " DESC");
 
         db = dbhelper.getWritableDatabase();
         String[] columns={Databasehelper.KEY_ID, Databasehelper.TITLE, Databasehelper.CONTENT, Databasehelper.DATETIME};
